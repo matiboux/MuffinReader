@@ -1,29 +1,38 @@
+<!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Chewie" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#222222" />
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+		<script src="{{ url_for('static', filename='index.js') }}"></script>
+		
+		<title>MuffinReader</title>
+	</head>
+	<body>
+		<div id="groupsdiv">
+			<ul id="groupslist">
+				{% for group in groups %}
+					<li>
+						<a href="#{{ group.name }}">
+							<span class="name">{{ group.name }}</span>
+							<span class="count">({{ group.count }})</span>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
 
-    <script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
-    </script>
+		<div id="subjectsdiv">
+			<ul id="subjectslist">
+				<li>New improvements courtesy of PM, huge thanks to him!</li>
+			</ul>
+		</div>
 
-    <script src="{{ url_for('static', filename='index.js') }}">
-    </script>
-
-    <body>
-        <div id="groupsdiv">
-            <ul id = "groupslist">
-                {% for group  in groups %}
-                <li><a href="#{{ group.name }}"><span class="name">{{ group.name }}</span> <span class="count">({{ group.count }})</span></a></li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div id="subjectsdiv">
-            <ul id = "subjectslist">
-                <li>New improvements courtesy of PM, huge thanks to him!</li>
-            </ul>
-        </div>
-
-        <div id="message">
-        </div>
-    </body>
+		<div id="message"></div>
+	</body>
 </html>
