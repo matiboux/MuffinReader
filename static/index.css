@@ -1,61 +1,61 @@
 body
 {
+    display: flex;
     background-color: #222222;
     background-image: url(muffinreader.png);
     background-position: right bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
-}
-#groupsdiv
-{
-    overflow:auto;
-    border:solid;
-    position:absolute;
-    top:0;
-    left:0;
-    width:14%;
-    height:99%;
-}
-#subjectsdiv
-{
-    overflow:auto;
-    border:solid;
-    position:absolute;
-    top:0;
-    left:15%;
-    width:84%;
-    height:29%;
-}
-#message
-{
-    overflow:auto;
-    border:solid black;
-    position:absolute;
-    top:30%;
-    left:15%;
-    width:84%;
-    height:69%;
-    color: #a0a0a0;
-    font-family: monospace;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
+#groupsdiv
+{
+    min-width: 250px;
+    max-height: 100%;
+    overflow: auto;
+    border: solid;
+}
+
+#messagediv
+{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+#subjectsdiv
+{
+    min-width: 300px;
+    height: 200px;
+    overflow: auto;
+    border: solid;
+}
+
+#message
+{
+    overflow: auto;
+    border: solid black;
+    color: #a0a0a0;
+    font-family: monospace;
+    flex-grow: 1;
+}
 #message .header_name
 {
     color: rgba(64, 200, 0, 0.75);
     font-weight: bold;
 }
-
 #message .quote
 {
     color: rgba(192, 64, 64, 0.75);
 }
-
 #message .quote_quote
 {
     color: rgba(192, 128, 64, 0.75);
 }
-
 #message .signature
 {
     color: rgba(64, 200, 0, 0.75);
@@ -67,9 +67,8 @@ ul
     padding-left: 0pt;
     padding-top: 0pt;
     margin-top: 0pt;
-    margin-bot: 0pt;
+    margin-bottom: 0pt;
 }
-
 li
 {
     border: 1px solid black;
@@ -78,12 +77,10 @@ li
     opacity: 0.5;
     color: #c0c0c0;
 }
-
 li :hover
 {
     background-color: rgba(0, 128, 255, 0.5);
 }
-
 li a
 {
     color: #c0c0c0;
@@ -91,12 +88,10 @@ li a
     display: block;
     width: 100%;
 }
-
 li a span.name
 {
     font-weight: bold;
 }
-
 li a span.count
 {
     color: #a0a0a0;
